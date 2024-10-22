@@ -215,7 +215,7 @@ The prediction and the SHAP results output will also be displayed on the termina
 
   Step 2. Get Data
 
-  Download the whole genome sequencing FASTQ files of a MTB isolate run, ERR137249 (ERR137249_1.fastq & ERR137249_2.fastq) from https://www.ebi.ac.uk/ena/browser/view/ERR137249
+  Download the whole genome sequencing FASTQ files of a MTB isolate run, SRR28888046 (SRR28888046_1.fastq & SRR28888046.fastq) from https://www.ebi.ac.uk/ena/browser/view/SRR28888046
 
   Step 3. Store these files in `Input_Dir1`
 
@@ -231,22 +231,22 @@ The prediction and the SHAP results output will also be displayed on the termina
 
    	   ./bdqr-WGS-predict.sh /home/username/Input_Dir1/ /home/username/Output_Dir1/
 
-`Input_Dir1` contains `ERR137249_1.fastq`, `ERR137249_2.fastq`
+`Input_Dir1` contains `SRR28888046_1.fastq`, `SRR28888046_2.fastq`
 
 `Output_Dir1` contains -
-* A folder - `ERR137249` - which contains:
+* A folder - `SRR28888046` - which contains:
 	* reference folder - reference genome and index files
-	* Trim galore outputs - `ERR137249_1_val_1.fq.gz`, `ERR137249_2_val_2.fq.gz`, `ERR137249_1_trimming_report.txt`, `ERR137249_2_trimming_report.txt`
-	* Bwa-mem output - `ERR137249.bam`
-	* Intermediate BAM files - `ERR137249_fix.bam`, `ERR137249_namesort.bam`, `ERR137249_positionsort.bam`, `ERR137249_markdup.bam`
-	* BAM index - `ERR137249.bam.bai`
-	* Freebayes output - `ERR137249.vcf`
-	* VCF compressed - `ERR137249.vcf.gz`
-	* VCF index - `ERR137249.vcf.gz.csi`
-* `ERR137249.tsv` - the intermediate TSV file
+	* Trim galore outputs - `SRR28888046_1_val_1.fq.gz`, `SRR28888046_2_val_2.fq.gz`, `SRR28888046_1_trimming_report.txt`, `SRR28888046_2_trimming_report.txt`
+	* Bwa-mem output - `SRR28888046.bam`
+	* Intermediate BAM files - `SRR28888046_fix.bam`, `SRR28888046_namesort.bam`, `SRR28888046_positionsort.bam`, `SRR28888046_markdup.bam`
+	* BAM index - `SRR28888046.bam.bai`
+	* Freebayes output - `SRR28888046.vcf`
+	* VCF compressed - `SRR28888046.vcf.gz`
+	* VCF index - `SRR28888046.vcf.gz.csi`
+* `SRR28888046.tsv` - the intermediate TSV file
 * `prediction.tsv` - the prediction result performed with the full model
-* `shap_result_50_features_ERR137249.tsv` - the SHAP result for ERR137249 with the 50-feature model
-* `shap_plot_50_features_ERR137249.svg` - the SHAP result plot for ERR137249 with the 50-feature model
+* `shap_result_50_features_SRR28888046.tsv` - the SHAP result for SRR28888046 with the 50-feature model
+* `shap_plot_50_features_SRR28888046.svg` - the SHAP result plot for SRR28888046 with the 50-feature model
 
 ----
 ### 2. Prediction from FASTQ (Multiple isolates)
@@ -257,7 +257,7 @@ The prediction and the SHAP results output will also be displayed on the termina
 
   Step 2. Get Data
 
-Download the whole genome sequencing FASTQ files of MTB ISOLATE runs, ERR137249 (ERR137249_1.fastq & ERR137249_2.fastq) and SRR1103491 (SRR1103491_1.fastq & SRR1103491_2.fastq) from https://www.ebi.ac.uk/ena/browser/view/ERR137249 and https://www.ebi.ac.uk/ena/browser/view/SRR1103491
+Download the whole genome sequencing FASTQ files of MTB ISOLATE runs, SRR28888046 (SRR28888046_1.fastq & SRR28888046_2.fastq) and SRR1103491 (SRR1103491_1.fastq & SRR1103491_2.fastq) from https://www.ebi.ac.uk/ena/browser/view/SRR28888046 and https://www.ebi.ac.uk/ena/browser/view/SRR1103491
 
   Step 3. Store these files in `Input_Dir2`
 
@@ -273,10 +273,10 @@ Download the whole genome sequencing FASTQ files of MTB ISOLATE runs, ERR137249 
 
     ./bdqr-WGS-predict.sh /home/username/Input_Dir1/ /home/username/Output_Dir2/
 
-`Input_Dir2` contains `ERR137249_1.fastq`, `ERR137249_2.fastq`, `SRR1103491_1.fastq`, `SRR1103491_2.fastq`
+`Input_Dir2` contains `SRR28888046_1.fastq`, `SRR28888046_2.fastq`, `SRR5341464_1.fastq`, `SRR5341464_2.fastq`
 
 `Output_Dir2` contains -
-* Two folders - `ERR137249`, `SRR1103491` - each containing:
+* Two folders - `SRR28888046`, `SRR5341464` - each containing:
 	* reference folder - reference genome and index files
 	* Trim galore outputs - `ISOLATENAME_1_val_1.fq.gz`, `ISOLATENAME_2_val_2.fq.gz`, `ISOLATENAME_1_trimming_report.txt`, `ISOLATENAME_2_trimming_report.txt`
 	* Bwa-mem output - `ISOLATENAME.bam`
@@ -288,10 +288,10 @@ Download the whole genome sequencing FASTQ files of MTB ISOLATE runs, ERR137249 
 * `merged.vcf`
 * `merged.tsv` - the intermediate TSV file
 * `prediction.tsv` - the prediction result performed with the full model
-* `shap_result_50_features_ERR137249.tsv` - the SHAP result for ERR137249 with the 50-feature model
-* `shap_plot_50_features_ERR137249.svg` - the SHAP result plot for ERR137249 with the 50-feature model
-* `shap_result_50_features_SRR1103491.tsv` - the SHAP result for SRR1103491 with the 50-feature model
-* `shap_plot_50_features_SRR1103491.svg` - the SHAP result plot for SRR1103491 with the 50-feature model
+* `shap_result_50_features_SRR28888046.tsv` - the SHAP result for SRR28888046 with the 50-feature model
+* `shap_plot_50_features_SRR28888046.svg` - the SHAP result plot for SRR28888046 with the 50-feature model
+* `shap_result_50_features_SRR5341464.tsv` - the SHAP result for SRR5341464 with the 50-feature model
+* `shap_plot_50_features_SRR5341464.svg` - the SHAP result plot for SRR5341464 with the 50-feature model
 
 ----
 ### 3. Prediction from single VCF
@@ -314,13 +314,13 @@ Download the whole genome sequencing FASTQ files of MTB ISOLATE runs, ERR137249 
 
     ./bdqr-VCF-predict.sh /home/username/Input_Dir3/ /home/username/Output_Dir3/
 
-`Input_Dir3` contains `ERR137249.vcf`
+`Input_Dir3` contains `SRR28888046.vcf`
 
 `Output_Dir3` contains -
-* `ERR137249.tsv` - the intermediate TSV file
+* `SRR28888046.tsv` - the intermediate TSV file
 * `prediction.tsv` - the prediction result performed with the full model
-* `shap_result_50_features_ERR137249.tsv` - the SHAP result for ERR137249 with the 50-feature model
-* `shap_plot_50_features_ERR137249.svg` - the SHAP result plot for ERR137249 with the 50-feature model
+* `shap_result_50_features_SRR28888046.tsv` - the SHAP result for SRR28888046 with the 50-feature model
+* `shap_plot_50_features_SRR28888046.svg` - the SHAP result plot for SRR28888046 with the 50-feature model
 
 ----
 ### 4. Prediction from multiple VCFs
@@ -343,18 +343,18 @@ Download the whole genome sequencing FASTQ files of MTB ISOLATE runs, ERR137249 
 
     ./bdqr-multi-VCF-predict.sh /home/username/Input_Dir4/ /home/username/Output_Dir4/
 
-`Input_Dir4` contains `ERR137249.vcf`, `SRR1103491.vcf`
+`Input_Dir4` contains `SRR28888046.vcf`, `SRR5341464.vcf`
 
 `Output_Dir4` contains -
-* Compressed VCFs - `ERR137249.vcf.gz` and `SRR1103491.vcf.gz`
-* VCF indices - `ERR137249.vcf.gz.csi` and `SRR1103491.vcf.gz.csi`
+* Compressed VCFs - `SRR28888046.vcf.gz` and `SRR5341464.vcf.gz`
+* VCF indices - `SRR28888046.vcf.gz.csi` and `SRR5341464.vcf.gz.csi`
 * `merged.vcf`
 * `merged.tsv` - the intermediate TSV file
 * `prediction.tsv` - the prediction result performed with the full model
-* `shap_result_50_features_ERR137249.tsv` - the SHAP result for ERR137249 with the 50-feature model
-* `shap_plot_50_features_ERR137249.svg` - the SHAP result plot for ERR137249 with the 50-feature model
-* `shap_result_50_features_SRR1103491.tsv` - the SHAP result for SRR1103491 with the 50-feature model
-* `shap_plot_50_features_SRR1103491.svg` - the SHAP result plot for SRR1103491 with the 50-feature model
+* `shap_result_50_features_SRR28888046.tsv` - the SHAP result for SRR28888046 with the 50-feature model
+* `shap_plot_50_features_SRR28888046.svg` - the SHAP result plot for SRR28888046 with the 50-feature model
+* `shap_result_50_features_SRR5341464.tsv` - the SHAP result for SRR5341464 with the 50-feature model
+* `shap_plot_50_features_SRR5341464.svg` - the SHAP result plot for SRR5341464 with the 50-feature model
 
 ----
 ### 5. Prediction from merged VCFs
@@ -382,10 +382,10 @@ Download the whole genome sequencing FASTQ files of MTB ISOLATE runs, ERR137249 
 `Output_Dir5` contains -
 * `merged.tsv` - the intermediate TSV file
 * `prediction.tsv` - the prediction result performed with the full model
-* `shap_result_50_features_ERR137249.tsv` - the SHAP result for ERR137249 with the 50-feature model
-* `shap_plot_50_features_ERR137249.svg` - the SHAP result plot for ERR137249 with the 50-feature model
-* `shap_result_50_features_SRR1103491.tsv` - the SHAP result for SRR1103491 with the 50-feature model
-* `shap_plot_50_features_SRR1103491.svg` - the SHAP result plot for SRR1103491 with the 50-feature model
+* `shap_result_50_features_SRR28888046.tsv` - the SHAP result for SRR28888046 with the 50-feature model
+* `shap_plot_50_features_SRR28888046.svg` - the SHAP result plot for SRR28888046 with the 50-feature model
+* `shap_result_50_features_SRR5341464.tsv` - the SHAP result for SRR5341464 with the 50-feature model
+* `shap_plot_50_features_SRR5341464.svg` - the SHAP result plot for SRR5341464 with the 50-feature model
 
 ## Team
 
